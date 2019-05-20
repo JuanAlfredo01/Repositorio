@@ -1,0 +1,107 @@
+                        tarea de sql    tarea 01
+
+SQL
+
+Las bases de datos relacionales (SQL) son el tipo que más tiempo lleva en el mercado de la tecnología y son por tanto las utilizadas en mayor medida tradicionalmente.
+Su composición está hecha con bases de datos llenas de tablas con filas que contienen campos estructurados.
+No se trata precisamente de un tipo de base de datos muy flexible, pero tiene a favor su gran soporte y el enorme desarrollo en herramientas debido 
+a todo su bagaje histórico. De hecho, es una tecnología muy reconocida en comparación con las bases NoSQL que al ser más novedosas no tienen tanto alcance todavía. 
+En cambio, las bases de datos SQL necesitan más recursos como norma general, ya que cuanto más compleja sea la base más procesamiento necesitará.
+El mayor inconveniente de las SQL es probablemente el referido a la escalabilidad, que es precisamente el que permitió el desarrollo de alternativas 
+que desembocaron en las redes NoSQL, ya que grandes empresas que manejan datos a gran escala con necesidad de mucha infraestructura sufrían con este problema. 
+A partir de ahí se desarrollaron las primeras NoSQL cerradas creadas por empresas para su uso interno, y finalmente los sistemas de código abierto. 
+Algunas de sus tecnologías más conocidas son Hypertable, Cassandra, MongoDB, DynamoDB o Redis, mientras que Oracle, Microsoft SQL Server, 
+SQlite o MySQL son cuatro de las más utilizadas dentro de las bases de datos SQL.
+
+Lo que entendi:
+Sql es utlizado por empresas que no manejan grandes canditades de informacion.
+
+NOSQL
+
+La gran diferencia entre los dos tipos de bases de datos es la estructuración, que en el caso de las NOSQL se trata de una forma de almacenamiento no estructurado, 
+todo lo contrario a sus predecesoras. En este caso, son de bases de datos sin una tabla fija como las que sí se encuentran en las bases de datos relacionales, 
+lo que permite una alta escalabilidad en ellas. Además, es abierta y por lo tanto flexible a diferentes tipos de datos y no necesita tantos recursos para ejecutarse;
+ de hecho, el hardware necesario no es de un coste muy elevado. En este sentido, también se deja notar el menor coste a la hora de la expansión, 
+ya que no necesitan la evolución en hardware del equipo, sino que basta con hacer un escalado horizontal, con más máquinas en las que distribuir la carga completa.
+Por contra, un par de desventajas de las bases NoSQL, que no son perfectas, son que los desarrolles, al implementar su propio código en pos de la fiabilidad y 
+coherencia, es decir, al no existir tanta estandarización, se limita el número de aplicaciones seguras para realizar transacciones, y por otro lado, 
+tampoco es una virtud el hecho de que sea incompatible con ellas llevar a cabo consultas SQL, lo que hace necesario un lenguaje de consulta manual que ralentiza 
+los procesos de este tipo concreto.
+En definitiva, lo más importante que debes saber es que las NoSQL no son un sustituto de las SQL, sino que son una alternativa que ofrece otras posibilidades,
+lo que las convierte en más interesantes para determinados casos como por ejemplo proyectos que requieren una alta escalabilidad en el los recursos son escasos 
+y la integridad de los datos no es lo más importante, como sí ocurre en cambio en aplicaciones especializadas por ejemplo en transacciones bancarias.
+
+Lo que entendi:
+Nosql es para las empresas que manejan grandes volumenes de informacion.
+
+
+			 Grandes empresas  que usan no-sql 
+
+1-. MetLife 
+2.- Bosch  (es una de las empresas de ingeniería más grandes del mundo)
+3.- The Weather Channel
+4.- Forbes
+5.- Square Enix
+6.- Washington Post
+
+Por que lo usan?
+Lo que entendi: las empresas que manejan nosql son las que manejan grandes cantidades de informacion.
+
+   Significado de Saas:
+Es un modelo de distribución de software donde el soporte lógico y los datos que maneja se alojan en servidores de una compañía de tecnologías
+de información y comunicación (TIC), a los que se accede vía Internet desde un cliente. La empresa proveedora TIC se ocupa del servicio de mantenimiento, 
+de la operación diaria y del soporte del software usado por el cliente. Regularmente el software puede ser consultado en cualquier computador, 
+se encuentre presente en la empresa o no. Se deduce que la información, el procesamiento, los insumos, y los resultados de la lógica de negocio del software, 
+están hospedados en la compañía de TIC.
+
+   Significado de Paas:
+es un entorno de desarrollo e implementación completo en la nube, con recursos que permiten entregar todo, 
+desde aplicaciones sencillas basadas en la nube hasta aplicaciones empresariales sofisticadas habilitadas para la nube. 
+Usted le compra los recursos que necesita a un proveedor de servicios en la nube, a los que accede a través de una conexión segura a Internet, 
+pero solo paga por el uso que hace de ellos. PaaS incluye infraestructura (servidores, almacenamiento y redes), pero también incluye middleware,
+herramientas de desarrollo, servicios de inteligencia empresarial (BI), sistemas de administración de bases de datos, etc. 
+PaaS está diseñado para sustentar el ciclo de vida completo de las aplicaciones web: compilación, pruebas, implementación, administración y actualización.
+PaaS permite evitar el gasto y la complejidad que suponen la compra y la administración de licencias de software, la infraestructura de aplicaciones
+ y el middleware subyacentes, las herramientas de desarrollo y otros recursos. Usted administra las aplicaciones y los servicios que desarrolla y, 
+normalmente, el proveedor de servicios en la nube administra todo lo demás.
+
+   Significado de Iaas:
+La Infraestructura como Servicio (IaaS, Infrastructure as a Service) pertenece al modelo XaaS. Con el IaaS, el proveedor ofrece una infraestructura 
+TIC en forma de abono. El concepto de infraestructura se compone de: servidores, hardware de almacenamiento, suministro de red y máquinas virtuales 
+(VM, Virtual Machines). Por lo tanto, también comprende los servicios relacionados como: seguridad y copias de seguridad con regularidad, 
+las cuales se realizan a menudo en el modelo IaaS. Con IaaS, el cliente usa la infraestructura del proveedor para desarrollar softwares propios o comprados. 
+Las empresas escogen a menudo el modelo IaaS para reducir la (gran) inversión que supone un hardware o para posponerla un tiempo. Sin embargo, 
+este modelo se suele basar en el desarrollo realizado sobre PaaS (plataforma como servicio) o SaaS (software como servicio).
+
+    Git Kraken
+Es una potente y elegante interfaz gráfica multiplataforma para git desarrollada con Electron. De forma muy sencilla podemos
+llevar el completo seguimiento de nuestros repositorios, ver ramas, tags, crear nuevos, todo el historial de nuestro trabajo, commits etcétera.
+
+   Que es git clone:
+Es una utilidad de línea de comandos de Git que se utiliza para apuntar a un repositorio existente y crear un clon, o copia del repositorio de destino. 
+
+  Git Branch:
+Este comando crea una rama con el nombre que elijas.
+
+  Git checkout
+El comando checkout se puede usar para crear ramas o cambiar entre ellas. Por ejemplo, el siguiente comando crea una nueva y se cambia a ella:
+command git checkout -b <banch-name>
+
+Para cambiar de una rama a otra solo usa:
+
+git checkout <branch-name>
+
+
+     Git Commit
+Un commit es un guardado con mensaje de los cambios que hemos realizado en un momento determinado en nuestro proyecto. 
+Normalemente el flujo de trabajo con git para el día a día consiste en hacer git status para ver la lista de cambios, 
+git add de todos los archivos o de los que queramos, y por último hacer commit.
+	
+
+   Git Status
+Este comando git imprimirá los archivos que van a ser guardados
+
+
+   Git add
+Con esto añadiremos todos los archivos que aparecían anteriormente para ser guardados.
+
