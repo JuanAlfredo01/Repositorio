@@ -1,0 +1,12 @@
+Quieksort         			 Es un algoritmo basado en la técnica de divide y vencerás, que permite, en promedio,
+					 ordenar n elementos en un tiempo proporcional a n log n.
+					 Esta es la técnica de ordenamiento más rápida conocida. 
+				         Fue desarrollada por C. Antony R. Hoare en 1960. El algoritmo original es recursivo, 
+					 pero se utilizan versiones iterativas para mejorar su rendimiento 
+					 (los algoritmos recursivos son en general más lentos que los iterativos, y consumen más recursos).
+
+Lo Que Entendí :                         Es un algoritmo que sirve para ordenar números, letras, palabras, etc. 
+				         Se inicia tomando un elemento  al que se le llamará pivote
+					 Generalmente se toma el primer elemento,también se suele tomar el último. 
+					 Si se halla un valor igual o menor al pivote, se continúa con el siguiente.
+				         Si se halla un valor mayor al pivote, se intercambian.

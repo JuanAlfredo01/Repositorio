@@ -1,0 +1,8 @@
+
+Divide and conquer			es un paradigma de diseño de algoritmo basado en recursión de múltiples ramificaciones .
+					Un algoritmo de dividir y vencer funciona al dividir recursivamente un problema en dos o más subproblemas del mismo tipo 
+					o tipo relacionado, hasta que se vuelven lo suficientemente simples como para resolverlos directamente. 
+					Las soluciones a los subproblemas se combinan para dar una solución al problema original.
+
+Lo Que Entendí : 			consiste en descomponer el problema original en varios sub-problemas más sencillos, 
+					para luego resolver éstos mediante un cálculo sencillo.

@@ -1,0 +1,6 @@
+Dijkstras 				También denominado Algoritmo de caminos mínimos, es un modelo que se clasifica dentro de los algoritmos de búsqueda.
+					Su metodología se basa en iteraciones, de manera tal que en la práctica, 
+					su desarrollo se dificulta a medida que el tamaño de la red aumenta,
+					dejándolo en clara desventaja, frente a métodos de optimización basados en programación matemática.
+
+Lo Que Entendí : 			Es determinar la ruta más corta desde el punto de origen, hasta cualquier punto.

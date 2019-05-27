@@ -1,0 +1,5 @@
+karatsuba algorithm                     es un algoritmo de multiplicación rápida que utiliza un enfoque de dividir y conquistar para multiplicar dos números. 
+					El algoritmo ingenuo para multiplicar dos números tiene un tiempo de ejecución mientras que este algoritmo 
+					tiene un tiempo de ejecución.
+
+Lo Que Entendí : 			es un procedimineto para multiplicar eficientemente numeros grandes.

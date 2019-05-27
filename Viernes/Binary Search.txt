@@ -1,0 +1,8 @@
+
+Binary Search       			 es un algoritmo de búsqueda que encuentra la posición de un valor en un array ordenado. 
+					 Compara el valor con el elemento en el medio del array, si no son iguales, 
+					 la mitad en la cual el valor no puede estar es eliminada y
+				         la búsqueda continúa en la mitad restante hasta que el valor se encuentre.
+
+Lo Que Entendí :  			 es un algoritmo  para encontrar un elemento en una lista ordenada de elementos.			 
+

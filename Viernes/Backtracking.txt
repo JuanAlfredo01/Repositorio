@@ -1,0 +1,11 @@
+
+Backtracking                             Es una tecnica de programacion para hacer busqueda sistemática a través de todas las configuraciones posibles 
+					 dentro de un espacio de busqueda. Para lograr esto, 	
+					 los algoritmos de tipo backtracking construyen posibles soluciones candidatas de manera sistemática.
+					 En general, dado una solución candidata.
+					 1. Verifican si s es solucion. Si lo es, hacen algo con ella (depende del problema).
+					 2. Construyen todas las posibles extensiones de s, e invocan recursivamente al algoritmo con todas ellas.
+					 A veces los algoritmos de tipo backtracking se usan para encontrar una solución, pero otras veces interesa que las revisen todas (por ejemplo, para encontrar la más corta).
+
+Lo Que Entendí : 			 realiza una búsqueda exhaustiva de soluciones para los problemas y es usado en problemas de optimización y juegos.
+ 
