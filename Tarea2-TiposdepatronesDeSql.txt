@@ -1,0 +1,13 @@
+Tipos de Patrones
+
+LIKE:
+Determina si una cadena de caracteres específica coincide con un patrón específico.
+Un patrón puede incluir caracteres regulares y caracteres comodín. 
+Durante la coincidencia de patrones, los caracteres regulares deben coincidir 
+exactamente con los caracteres especificados en la cadena de caracteres. 
+Sin embargo, los caracteres comodín pueden combinarse con fragmentos arbitrarios 
+de la cadena de caracteres. El uso de caracteres comodín hace que el operador 
+LIKE sea más flexible que el uso de los operadores de comparación de cadenas 
+= y! =. Si alguno de los argumentos no es del tipo de datos de cadena de caracteres,
+el Motor de base de datos de SQL Server lo convierte al tipo de datos de cadena 
+de caracteres, si es posible.
