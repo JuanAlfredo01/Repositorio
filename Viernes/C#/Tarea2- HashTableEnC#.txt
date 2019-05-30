@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+ 
+namespace TablaHash
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+ 
+            
+            // Creamos e insertamos datos 
+            Hashtable miDiccio = new Hashtable();
+ 
+            miDiccio.Clear();
+            
+            miDiccio.Add("byte", "8 bits");
+            miDiccio.Add("pc", "personal computer");
+            miDiccio.Add("PC", "ordenador personal");
+            miDiccio.Add("kilobyte", "1024 bytes");
+            miDiccio.Add("bit", "");
+ 
+            miDiccio.Remove("PC");
+ 
+            // Mostramos algún dato 
+            Console.WriteLine("Cantidad de palabras en el diccionario: {0}",
+            miDiccio.Count);
+	// inicio de if.
+            if (miDiccio.ContainsKey("bit")) {
+           	// mostrara en pantalla si es verdadero
+                Console.WriteLine("El significado de bit es: {0}",
+                miDiccio["bit"]);
+            }
+            else
+            {
+		// mostrara en pabntalla si es falso
+                Console.WriteLine("No existe esa palabra!");
+            }
+ 
+            Console.ReadKey();
+        }
+    }
+}

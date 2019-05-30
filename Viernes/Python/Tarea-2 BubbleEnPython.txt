@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+ 
+from time import time
+
+
+# Aquí se crea la función . 
+def bubbleSort(lista):
+    global comparaciones
+# se declara que la variable n es igual a len.
+    n = len(lista)
+# inicio del ciclo for  
+    for i in xrange(1, n):
+        for j in xrange(n-i):
+            comparaciones += 1
+        # inicio del clico if para comparar lista.
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j]
+ 
+lista = [36, 71, 16, 21, 73, 9, 0, 40, 66, 5]
+comparaciones = 0
+ 
+t0 = time()
+bubbleSort(lista)
+t1 = time()
+# Aqui se  va a imprimir la lista ya odenada. 
+print "Lista ordenada:"
+print lista, "\n"
+ 
+print "Tiempo: {0:f} segundos".format(t1 - t0)
+print "Comparaciones:", comparaciones

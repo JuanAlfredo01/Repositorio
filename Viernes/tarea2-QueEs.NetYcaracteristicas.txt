@@ -1,0 +1,30 @@
+ Qué es .NET Framework
+“.NET Framework” en sí mismo es un poco inapropiado. Un Framework (en términos de programación) es realmente una colección de interfaces de programación de aplicaciones
+(API) y una biblioteca compartida de código que los desarrolladores pueden usar al desarrollar aplicaciones, para que no tengan que escribir el código desde cero.
+En .NET Framework, esa biblioteca de código compartido se denomina Biblioteca de clases de Framework (FCL). Los bits de código en la biblioteca compartida pueden 
+realizar todo tipo de funciones diferentes. Digamos, por ejemplo, que un desarrollador necesita que su aplicación haga ping a otra dirección IP en la red. 
+En lugar de escribir ese código ellos mismos, y luego escribir todos los pequeños fragmentos que tienen que interpretar lo que significan los resultados del ping, 
+pueden usar el código de la biblioteca que realiza esa función.
+
+
+Estas son las principales características de .NET Core:
+
+Multiplataforma: .NET Core proporciona una funcionalidad clave para implementar las características de la aplicación que necesita y reutilizar este código 
+independientemente del destino de la plataforma. En la actualidad es compatible con los tres sistemas operativos (SO) principales: Windows, Linux y macOS.
+Puede escribir aplicaciones y bibliotecas que se ejecutan sin modificaciones en todos los sistemas operativos compatibles. Para ver una lista de todos los sistemas 
+operativos compatibles, visite .NET Core roadmap (Mapa de ruta de .NET Core).
+
+Código abierto: .NET Core es uno de los muchos proyectos que administra .NET Foundation y está disponible en GitHub. Al tratarse de un proyecto de código abierto, 
+.NET Core favorece que el proceso de desarrollo sea más transparente y que exista una comunidad activa y comprometida.
+
+Desarrollo flexible: hay dos modos principalmente para desarrollar una aplicación, implementación basada en marco e implementación autocontenida.
+ Con la implementación basada en marco, solo se instalan su aplicación y las dependencias de terceros, y la aplicación requiere la presencia de una versión 
+de .NET Core en todo el sistema. Con la implementación autocontenida, la versión de .NET Core que se utiliza para compilar su aplicación también se implementa 
+junto con la aplicación y las dependencias de terceros, y se puede ejecutar paralelamente con otras versiones. Para obtener más información, consulte el tema 
+Implementación de aplicaciones .NET Core.
+
+Modular: .NET Core es modular, ya que se publica a través de NuGet en paquetes de ensamblado más reducidos. En lugar de un ensamblado grande que contiene 
+la mayor parte de la funcionalidad básica, .NET Core está disponible como paquetes más pequeños centrados en las características. Esta característica nos 
+permite un modelo de desarrollo más ágil y le permite optimizar su aplicación para incluir solo los paquetes de NuGet que necesita. Entre las ventajas de 
+una menor superficie de aplicación se incluyen una mayor seguridad, mantenimiento reducido, rendimiento mejorado y menores costes en un modelo de suscripción 
+ajustado a sus necesidades.

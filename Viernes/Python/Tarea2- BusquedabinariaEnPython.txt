@@ -1,0 +1,43 @@
+# se declaran valores.
+valores=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+ # se crea la función busquedaBinaria.
+def busquedaBinaria(buscar,inicio,fin,iteraciones):
+   
+   
+    
+    Devuelve dos valores...
+        - True o False para determinar si ha encontrado el elemento
+        . Numero de interaciones en la lista o array para buscar el elemento
+  
+ 
+    #  se busca el elemento central del arreglo entre dos posiciones.
+    centro=int((fin-inicio)/2)+inicio
+   # inicio de ciclo if.
+    if centro>len(valores)-1 or inicio>fin:
+        return (False,iteraciones)
+ 
+    if buscar>valores[centro]:
+        return busquedaBinaria(buscar,centro+1,fin,iteraciones+1)
+    elif buscar<valores[centro]:
+        return busquedaBinaria(buscar,inicio,centro-1,iteraciones+1)
+    else:
+        return (True,iteraciones)
+ # inicio de un ciclo while que es verdadero.
+while True:
+    buscar=input("indica un numero a buscar:")
+	# ciclo if para buscar un número.
+    if buscar=="":
+        break
+ 
+    try:
+        buscar=int(buscar)
+    except:
+        print("El valor tienes que ser numerico")
+        continue
+ 
+    conseguido,iteraciones=busquedaBinaria(buscar,0,len(valores),1)
+    # ciclo if que indica si has conseguido encontrar el valor.
+    if conseguido:
+        print("Encontrado en {} iteraciones".format(iteraciones))
+    else:
+        print("El valor introducido no se encuentra en la lista de valores. Se han necesitado {} iteraciones".format(iteraciones))
