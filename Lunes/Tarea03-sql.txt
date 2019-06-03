@@ -1,23 +1,25 @@
 Que es un esquema de una base de datos de SQl:
 
-Un esquema de base de datos representa la configuraciÛn lÛgica de todo o parte de una base de datos relacional. 
-Puede existir de dos formas: como representaciÛn visual y como un conjunto de fÛrmulas conocidas como restricciones de integridad que controlan una base de datos.
-Estas fÛrmulas se expresan en un lenguaje de definiciÛn de datos, tal como SQL. Como parte de un diccionario de datos, 
-un esquema de base de datos indica cÛmo las entidades que conforman la base de datos se relacionan entre sÌ, incluidas las tablas, las vistas, 
-los procedimientos almacenados y mucho m·s.
+Un esquema de base de datos representa la configuraci√≥n l√≥gica de todo o parte de una base de datos relacional. 
+Puede existir de dos formas: como representaci√≥n visual y como un conjunto de f√≥rmulas conocidas como restricciones de integridad que controlan una base de datos.
+Estas f√≥rmulas se expresan en un lenguaje de definici√≥n de datos, tal como SQL. Como parte de un diccionario de datos, 
+un esquema de base de datos indica c√≥mo las entidades que conforman la base de datos se relacionan entre s√≠, incluidas las tablas, las vistas, 
+los procedimientos almacenados y mucho m√°s.
 Hay dos tipos principales de esquemas de bases de datos:
 
-1.-Un esquema lÛgico de base de datos expresa las restricciones lÛgicas que se aplican a los datos almacenados.
+1.-Un esquema l√≥gico de base de datos expresa las restricciones l√≥gicas que se aplican a los datos almacenados.
 Puede definir las restricciones de integridad, las vistas y las tablas.
-2.-Un esquema fÌsico de base de datos dispone cÛmo se almacenan los datos fÌsicamente en un sistema de almacenamiento en tÈrminos de archivos e Ìndices.
+2.-Un esquema f√≠sico de base de datos dispone c√≥mo se almacenan los datos f√≠sicamente en un sistema de almacenamiento en t√©rminos de archivos e √≠ndices.
 
 ------------------------------------------------
 Como se usan los esquemas de una base de datos:
+se usan para tener acceso a un conjunto de tabkas para un rol en especifico.
+
 Para crear un esquema:
 
 CREATE SCHEMA <Nombre> AUTHORIZATION DBO
 
-AUTHORIZATION DBO: Si se crea un objeto sin especificar esquema, ese objeto le pertenece a DBO, por tal razÛn, hay que pedirle autorizaciÛn para poder mover ese objeto a tu nuevo esquema.
+AUTHORIZATION DBO: Si se crea un objeto sin especificar esquema, ese objeto le pertenece a DBO, por tal raz√≥n, hay que pedirle autorizaci√≥n para poder mover ese objeto a tu nuevo esquema.
 
 Para mover un objeto de un esquema a otro:
 ALTER SCHEMA <Nuevo esquema> TRANSFER Esquema.Tabla
@@ -25,32 +27,32 @@ ALTER SCHEMA <Nuevo esquema> TRANSFER Esquema.Tabla
 -------------Para crear un esquema
 En el Explorador de objetos, expanda la carpeta Bases de datos .
 Expanda la base de datos en la que se va a crear el esquema de la misma.
-Haga clic con el botÛn derecho en la carpeta Seguridad , seleccione Nuevoy seleccione Esquema.
-En el cuadro de di·logo Esquema - Nuevo , en la p·gina General , escriba un nombre para el nuevo esquema en el cuadro Nombre de esquema .
+Haga clic con el bot√≥n derecho en la carpeta Seguridad , seleccione Nuevoy seleccione Esquema.
+En el cuadro de di√°logo Esquema - Nuevo , en la p√°gina General , escriba un nombre para el nuevo esquema en el cuadro Nombre de esquema .
 En el cuadro Propietario del esquema , escriba el nombre del usuario o rol de base de datos que va a poseer el esquema. 
-Como alternativa, haga clic en Buscar para abrir el cuadro de di·logo Buscar roles y usuarios .
+Como alternativa, haga clic en Buscar para abrir el cuadro de di√°logo Buscar roles y usuarios .
 Haga clic en Aceptar.
 
 --------------------------------------
 
 Que es T-SQL:
-Transact-SQL Û T-SQL es un lenguaje muy potente que permite definir casi cualquier tarea que se quiera efectuar sobre la base de datos, 
-va m·s all· de un lenguaje SQL cualquiera ya que incluye caracterÌsticas propias de cualquier lenguaje de programaciÛn, caracterÌsticas que 
-permiten definir la lÛgica necesaria para el tratamiento de la informaciÛn.
+Transact-SQL √≥ T-SQL es un lenguaje muy potente que permite definir casi cualquier tarea que se quiera efectuar sobre la base de datos, 
+va m√°s all√° de un lenguaje SQL cualquiera ya que incluye caracter√≠sticas propias de cualquier lenguaje de programaci√≥n, caracter√≠sticas que 
+permiten definir la l√≥gica necesaria para el tratamiento de la informaci√≥n.
 --------------------------------------
 El Transact-SQL permite:
 
-Definir bloques de instrucciones SQL que se tratan como unidades de ejecuciÛn.
+Definir bloques de instrucciones SQL que se tratan como unidades de ejecuci√≥n.
 Realizar ejecuciones condicionales.
 Realizar ejecuciones iterativas o repetitivas.
-Garantizar el tratamiento modular con la declaraciÛn de variables locales y el uso de procedimientos almacenados.
+Garantizar el tratamiento modular con la declaraci√≥n de variables locales y el uso de procedimientos almacenados.
 Manipular tupla a tupla el resultado de una consulta.
 Sin embargo no permite:
 
 Crear interfaces de usuario.
-Crear aplicaciones ejecutables, sino elementos que en alg˙n momento llegar·n al servidor de datos y ser·n ejecutados.
+Crear aplicaciones ejecutables, sino elementos que en alg√∫n momento llegar√°n al servidor de datos y ser√°n ejecutados.
 Debido a estas restricciones se emplea generalmente para crear procedimientos almacenados, triggers y funciones de usuario.
- Puede ser utilizado como cualquier SQL como lenguaje embebido en aplicaciones desarrolladas en otros lenguajes de programaciÛn como Visual Basic, C, Java, etcÈtera.
+ Puede ser utilizado como cualquier SQL como lenguaje embebido en aplicaciones desarrolladas en otros lenguajes de programaci√≥n como Visual Basic, C, Java, etc√©tera.
 
 ---------------------------------------------------
 10 Ejemplos de consultas SQL:
@@ -118,8 +120,8 @@ WITH
 7.-
 WITH r1 as ( SELECT *
 FROM employee
-WHERE fname = ëJohní
- AND lname = ëSmithí)
+WHERE fname = ‚ÄòJohn‚Äô
+ AND lname = ‚ÄòSmith‚Äô)
 SELECT *
 FROM dependent
 WHERE essn IN (SELECT ssn from r1); 
@@ -133,7 +135,7 @@ salary DESC LIMIT 5 );
 SELECT *
 FROM (SELECT fname, lname, salary
  FROM employee
- WHERE sex = ëMí) r1
+ WHERE sex = ‚ÄòM‚Äô) r1
 WHERE r1.salary > 50000;
 
 10.-
@@ -148,17 +150,17 @@ WHERE Cross(Rios.Shape, Paises.Shape)
 --------------------------------------------
 Permisos ACL
 La Access Control List o lista de control de acceso es un informe sobre los permisos o derechos de acceso que tiene cada usuario 
-sobre un objeto determinado (como un directorio o un archivo). El sistema operativo se encarga de controlar que ning˙n usuario 
-pueda poseer m·s o menos privilegios de los que menciona el ACL.
+sobre un objeto determinado (como un directorio o un archivo). El sistema operativo se encarga de controlar que ning√∫n usuario 
+pueda poseer m√°s o menos privilegios de los que menciona el ACL.
 
-ACL define quÈ usuarios o grupos pueden acceder un objeto y quÈ operaciones puede realizar. Esas operaciones usualmente incluyen leer, 
-escribir y ejecutar. Por ejemplo, si ACL especifica acceso de sÛlo lectura para un usuario especÌfico de un archivo, ese usuario sÛlo 
-podr· abrir el archivo en cuestiÛn pero no podr· escribirlo o ejecutarlo.
+ACL define qu√© usuarios o grupos pueden acceder un objeto y qu√© operaciones puede realizar. Esas operaciones usualmente incluyen leer, 
+escribir y ejecutar. Por ejemplo, si ACL especifica acceso de s√≥lo lectura para un usuario espec√≠fico de un archivo, ese usuario s√≥lo 
+podr√° abrir el archivo en cuesti√≥n pero no podr√° escribirlo o ejecutarlo.
 
-ACL provee un mÈtodo sencillo de administrar permisos en archivos y carpetas. Este mÈtodo es usado en la mayorÌa de los sistemas operativos, 
+ACL provee un m√©todo sencillo de administrar permisos en archivos y carpetas. Este m√©todo es usado en la mayor√≠a de los sistemas operativos, 
 incluyendo Windows, Mac y UNIX.
 
-El ACL est· usualmente oculto para el usuario, sÛlo puede ser modificado utilizando la interfaz gr·fica.
+El ACL est√° usualmente oculto para el usuario, s√≥lo puede ser modificado utilizando la interfaz gr√°fica.
 
 En UNIX, el ACL puede ser editado usando el comando chmod().
 ----------------------------------------------------------------
@@ -166,24 +168,24 @@ Alternativa al ACL
 
 La principal alternativa al modelo ACL es el modelo RBAC (control de acceso basado en roles).
 
-Un "modelo mÌnimo de RBAC", RBACm, puede compararse con un mecanismo ACL, ACLg, en el que sÛlo se permiten grupos como entradas en el ACL. 
-Barkley (1997) demostrÛ que el RBACm y el ACLg son equivalentes.
+Un "modelo m√≠nimo de RBAC", RBACm, puede compararse con un mecanismo ACL, ACLg, en el que s√≥lo se permiten grupos como entradas en el ACL. 
+Barkley (1997) demostr√≥ que el RBACm y el ACLg son equivalentes.
 
-En las implementaciones SQL modernas, ACL tambiÈn administra grupos y herencias en una jerarquÌa de grupos. 
+En las implementaciones SQL modernas, ACL tambi√©n administra grupos y herencias en una jerarqu√≠a de grupos. 
 Por lo tanto, las "ACL modernas" pueden expresar todo lo que expresan los RBAC, y son notablemente poderosas
-(comparadas con las "antiguas ACL") en su capacidad para expresar la polÌtica de control de acceso en tÈrminos de la
+(comparadas con las "antiguas ACL") en su capacidad para expresar la pol√≠tica de control de acceso en t√©rminos de la
 forma en que los administradores ven a las organizaciones.
 Para el intercambio de datos, y para "comparaciones de alto nivel", los datos ACL pueden ser traducidos a XACML.
 ------------------------------------------------------------------
-AutenticaciÛn ACL
+Autenticaci√≥n ACL
 
-La autenticaciÛn de contraseÒa b·sica tiene las caracterÌsticas siguientes:
+La autenticaci√≥n de contrase√±a b√°sica tiene las caracter√≠sticas siguientes:
 
 Los usuarios se identifican o se autentican cuando acceden a las bases de datos y las aplicaciones del servidor.
-Un usuario de navegador web debe tener un nombre de usuario y una contraseÒa de Internet almacenados en el documento Persona del 
-usuario para acceder a las bases de datos. SÛlo los usuarios con estas credenciales puede acceder a una base de datos que requiere 
-autenticaciÛn de contraseÒa b·sica.
-Los datos transmitidos entre el usuario y el servidor de Sametime (incluidos el nombre y la contraseÒa) no est·n codificados.
+Un usuario de navegador web debe tener un nombre de usuario y una contrase√±a de Internet almacenados en el documento Persona del 
+usuario para acceder a las bases de datos. S√≥lo los usuarios con estas credenciales puede acceder a una base de datos que requiere 
+autenticaci√≥n de contrase√±a b√°sica.
+Los datos transmitidos entre el usuario y el servidor de Sametime (incluidos el nombre y la contrase√±a) no est√°n codificados.
 Los usuarios se identifican en los archivos de registro de mantenimiento.
-La autenticaciÛn de contraseÒa b·sica identifica a los usuarios, pero no evita que los usuarios no autorizados escuchen las 
-transmisiones de red u obtengan acceso al servidor adivinando las contraseÒas. 
+La autenticaci√≥n de contrase√±a b√°sica identifica a los usuarios, pero no evita que los usuarios no autorizados escuchen las 
+transmisiones de red u obtengan acceso al servidor adivinando las contrase√±as. 
