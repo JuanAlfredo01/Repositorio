@@ -1,0 +1,189 @@
+Que es un esquema de una base de datos de SQl:
+
+Un esquema de base de datos representa la configuración lógica de todo o parte de una base de datos relacional. 
+Puede existir de dos formas: como representación visual y como un conjunto de fórmulas conocidas como restricciones de integridad que controlan una base de datos.
+Estas fórmulas se expresan en un lenguaje de definición de datos, tal como SQL. Como parte de un diccionario de datos, 
+un esquema de base de datos indica cómo las entidades que conforman la base de datos se relacionan entre sí, incluidas las tablas, las vistas, 
+los procedimientos almacenados y mucho más.
+Hay dos tipos principales de esquemas de bases de datos:
+
+1.-Un esquema lógico de base de datos expresa las restricciones lógicas que se aplican a los datos almacenados.
+Puede definir las restricciones de integridad, las vistas y las tablas.
+2.-Un esquema físico de base de datos dispone cómo se almacenan los datos físicamente en un sistema de almacenamiento en términos de archivos e índices.
+
+------------------------------------------------
+Como se usan los esquemas de una base de datos:
+Para crear un esquema:
+
+CREATE SCHEMA <Nombre> AUTHORIZATION DBO
+
+AUTHORIZATION DBO: Si se crea un objeto sin especificar esquema, ese objeto le pertenece a DBO, por tal razón, hay que pedirle autorización para poder mover ese objeto a tu nuevo esquema.
+
+Para mover un objeto de un esquema a otro:
+ALTER SCHEMA <Nuevo esquema> TRANSFER Esquema.Tabla
+
+-------------Para crear un esquema
+En el Explorador de objetos, expanda la carpeta Bases de datos .
+Expanda la base de datos en la que se va a crear el esquema de la misma.
+Haga clic con el botón derecho en la carpeta Seguridad , seleccione Nuevoy seleccione Esquema.
+En el cuadro de diálogo Esquema - Nuevo , en la página General , escriba un nombre para el nuevo esquema en el cuadro Nombre de esquema .
+En el cuadro Propietario del esquema , escriba el nombre del usuario o rol de base de datos que va a poseer el esquema. 
+Como alternativa, haga clic en Buscar para abrir el cuadro de diálogo Buscar roles y usuarios .
+Haga clic en Aceptar.
+
+--------------------------------------
+
+Que es T-SQL:
+Transact-SQL ó T-SQL es un lenguaje muy potente que permite definir casi cualquier tarea que se quiera efectuar sobre la base de datos, 
+va más allá de un lenguaje SQL cualquiera ya que incluye características propias de cualquier lenguaje de programación, características que 
+permiten definir la lógica necesaria para el tratamiento de la información.
+--------------------------------------
+El Transact-SQL permite:
+
+Definir bloques de instrucciones SQL que se tratan como unidades de ejecución.
+Realizar ejecuciones condicionales.
+Realizar ejecuciones iterativas o repetitivas.
+Garantizar el tratamiento modular con la declaración de variables locales y el uso de procedimientos almacenados.
+Manipular tupla a tupla el resultado de una consulta.
+Sin embargo no permite:
+
+Crear interfaces de usuario.
+Crear aplicaciones ejecutables, sino elementos que en algún momento llegarán al servidor de datos y serán ejecutados.
+Debido a estas restricciones se emplea generalmente para crear procedimientos almacenados, triggers y funciones de usuario.
+ Puede ser utilizado como cualquier SQL como lenguaje embebido en aplicaciones desarrolladas en otros lenguajes de programación como Visual Basic, C, Java, etcétera.
+
+---------------------------------------------------
+10 Ejemplos de consultas SQL:
+
+1.-
+SELECT [ ALL / DISTINC ] [ * ] / [ListaColumnas_Expresiones] AS [Expresion]
+FROM Nombre_Tabla_Vista 
+WHERE Condiciones
+ORDER BY ListaColumnas [ ASC / DESC ]
+
+2.- 
+SELECT 
+   alias1.columna,
+ alias2.columna,... 
+FROM 
+ tabla1 
+  as alias1, tabla2 as alias2 
+WHERE 
+ alias1.columna 
+= alias2.columna 
+AND 
+ otras 
+condiciones 
+
+3.-
+USE AdventureWorks2012;
+GO
+SELECT *
+FROM Production.Product
+ORDER BY Name ASC;
+-- Alternate way.
+USE AdventureWorks2012;
+GO
+SELECT p.*
+FROM Production.Product AS p
+ORDER BY Name ASC;
+GO
+
+4.-
+   SELECT TOP 25 Nombre, Apellido 
+    FROM Estudiantes 
+    ORDER BY Nota DESC; 
+
+5.-
+WITH
+    NEWEMP AS (SELECT EMPNO FROM NEW TABLE
+                (INSERT INTO EMPLOYEE(EMPNO, FIRSTNME)
+                    VALUES(NEXT VALUE FOR EMPNO_SEQ, 'GEORGE'))),
+    OLDEMP AS (SELECT EMPNO FROM EMPLOYEE WHERE FIRSTNME = 'SALLY'),
+    UPPROJ AS (SELECT PROJNAME FROM NEW TABLE
+                (UPDATE PROJECT
+                    SET RESPEMP = (SELECT EMPNO FROM NEWEMP)
+                    WHERE RESPEMP = (SELECT EMPNO FROM OLDEMP))),
+    DELEMP AS (SELECT EMPNO FROM OLD TABLE
+                (DELETE FROM EMPLOYEE
+                    WHERE EMPNO = (SELECT EMPNO FROM OLDEMP)))
+  SELECT PROJNAME FROM UPPROJ;
+
+6.-
+ EXEC SQL  DECLARE UP_CUR CURSOR FOR
+              SELECT PROJNO, PRSTDATE, PRENDATE
+                FROM PROJECT
+                FOR UPDATE OF PRSTDATE, PRENDATE;
+
+7.-
+WITH r1 as ( SELECT *
+FROM employee
+WHERE fname = ‘John’
+ AND lname = ‘Smith’)
+SELECT *
+FROM dependent
+WHERE essn IN (SELECT ssn from r1); 
+
+8.-
+CREATE TEMPORARY TABLE top5Emp AS
+(SELECT * FROM employee ORDER BY
+salary DESC LIMIT 5 );
+
+9.-
+SELECT *
+FROM (SELECT fname, lname, salary
+ FROM employee
+ WHERE sex = ‘M’) r1
+WHERE r1.salary > 50000;
+
+10.-
+SELECT Paises.Nombre,
+      Length(Intersection(
+             Rios.Shape, Paises.Shape))
+       AS 'Longitud'
+FROM Rios, Paises
+WHERE Cross(Rios.Shape, Paises.Shape)
+      AND Rios.Nombre = 'Nilo'
+
+--------------------------------------------
+Permisos ACL
+La Access Control List o lista de control de acceso es un informe sobre los permisos o derechos de acceso que tiene cada usuario 
+sobre un objeto determinado (como un directorio o un archivo). El sistema operativo se encarga de controlar que ningún usuario 
+pueda poseer más o menos privilegios de los que menciona el ACL.
+
+ACL define qué usuarios o grupos pueden acceder un objeto y qué operaciones puede realizar. Esas operaciones usualmente incluyen leer, 
+escribir y ejecutar. Por ejemplo, si ACL especifica acceso de sólo lectura para un usuario específico de un archivo, ese usuario sólo 
+podrá abrir el archivo en cuestión pero no podrá escribirlo o ejecutarlo.
+
+ACL provee un método sencillo de administrar permisos en archivos y carpetas. Este método es usado en la mayoría de los sistemas operativos, 
+incluyendo Windows, Mac y UNIX.
+
+El ACL está usualmente oculto para el usuario, sólo puede ser modificado utilizando la interfaz gráfica.
+
+En UNIX, el ACL puede ser editado usando el comando chmod().
+----------------------------------------------------------------
+Alternativa al ACL
+
+La principal alternativa al modelo ACL es el modelo RBAC (control de acceso basado en roles).
+
+Un "modelo mínimo de RBAC", RBACm, puede compararse con un mecanismo ACL, ACLg, en el que sólo se permiten grupos como entradas en el ACL. 
+Barkley (1997) demostró que el RBACm y el ACLg son equivalentes.
+
+En las implementaciones SQL modernas, ACL también administra grupos y herencias en una jerarquía de grupos. 
+Por lo tanto, las "ACL modernas" pueden expresar todo lo que expresan los RBAC, y son notablemente poderosas
+(comparadas con las "antiguas ACL") en su capacidad para expresar la política de control de acceso en términos de la
+forma en que los administradores ven a las organizaciones.
+Para el intercambio de datos, y para "comparaciones de alto nivel", los datos ACL pueden ser traducidos a XACML.
+------------------------------------------------------------------
+Autenticación ACL
+
+La autenticación de contraseña básica tiene las características siguientes:
+
+Los usuarios se identifican o se autentican cuando acceden a las bases de datos y las aplicaciones del servidor.
+Un usuario de navegador web debe tener un nombre de usuario y una contraseña de Internet almacenados en el documento Persona del 
+usuario para acceder a las bases de datos. Sólo los usuarios con estas credenciales puede acceder a una base de datos que requiere 
+autenticación de contraseña básica.
+Los datos transmitidos entre el usuario y el servidor de Sametime (incluidos el nombre y la contraseña) no están codificados.
+Los usuarios se identifican en los archivos de registro de mantenimiento.
+La autenticación de contraseña básica identifica a los usuarios, pero no evita que los usuarios no autorizados escuchen las 
+transmisiones de red u obtengan acceso al servidor adivinando las contraseñas. 
