@@ -13,7 +13,7 @@ Puede definir las restricciones de integridad, las vistas y las tablas.
 
 ------------------------------------------------
 Como se usan los esquemas de una base de datos:
-se usan para tener acceso a un conjunto de tabkas para un rol en especifico.
+se usan para tener acceso a un conjunto de tablas para un rol en especifico.
 
 Para crear un esquema:
 
