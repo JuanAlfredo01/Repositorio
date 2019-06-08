@@ -1,0 +1,27 @@
+Antes de empezar
+Asegúrese de que tiene el rol de autorización de administrador de base de datos para otorgar permisos. El Microsoft SQL Server agent utiliza la autenticación de SQL Server o la autenticación de Windows para acceder al servidor SQL. Para la autenticación de SQL Server, el agente utiliza el ID de SQL Server configurado. Para la autenticación de Windows, el agente utiliza el ID de usuario run-as. El ID de SQL Server que el agente utiliza debe tener acceso público para cada base de datos de SQL Server que desee supervisar.
+
+Acerca de esta tarea
+Debe otorgar permisos a bases de datos de SQL Server para que el agente pueda acceder a y supervisar estas bases de datos. Para configurar el agente localmente, realice esta tarea después de instalar el agente y antes de configurarlo. Para configurar el agente de forma remota, lleve a cabo esta tarea después de instalar y configurar el agente.
+
+Procedimiento
+Pulse Inicio > Programas > Microsoft SQL Server 2005 > SQL Server Management Studio.
+En el separador Árbol, seleccione Inicios de sesión en la carpeta Seguridad (Raíz de consola > NombreWindows > Seguridad > Inicios de sesión).
+Pulse con el botón derecho del ratón Inicios de sesión y seleccione Inicio de sesión nuevo.
+Seleccione la opción Carpeta General y especifique una de las opciones siguientes:
+ID de usuario de SQL Server
+Si está utilizando la autenticación de SQL Server.
+
+ID de usuario de Windows
+Si está utilizando la autenticación de Windows.
+
+Seleccione uno de los siguientes métodos de autenticación:
+SQL Server
+Windows
+En el campo Contraseña, escriba una contraseña si está utilizando el método de autenticación de SQL Server.
+Seleccione la opción Correlación de usuarios.
+En el área Especificar a qué bases de datos puede accederse mediante este inicio de sesión, marque el recuadro de selección correspondiente a cada base de datos para la que desee otorgar permisos.
+Seleccione la opción Roles del servidor.
+Pulse Aceptar para visualizar la ventana Confirmar contraseña.
+Vuelva a escribir la contraseña que escribió para el ID de usuario.
+Pulse en Aceptar para visualizar el ID de usuario nuevo de la lista de Inicios de sesión.

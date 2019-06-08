@@ -1,0 +1,81 @@
+Para permitir el acceso a la instancia de SQL Server, tenemos que habilitar el protocolo TCP/IP, el cual no está habilitado por defecto. 
+TCP/IP (Protocolo de Control de Transmisión/Protocolo de Internet) es un conjunto de protocolos desarrollado para permitir a las 
+computadoras en red compartir recursos a través de la red. Fue desarrollado por DARPA bajo ARPNET a principios de los 70s.
+
+Para establecer una conexión remota exitosa es necesario configurar los puertos apropiados en el Cortafuegos de Windows. 
+En SQL Server hay dos tipos de instancias. La primera es la instancia por defecto y la segunda es la instancia con nombre. 
+Para conectarse a la instancia por defecto del Motor de la Base de Datos, o a la instancia con nombre que está solamente instalada en su máquina,
+ el puerto TCP 1433 es el único puerto que necesitará especificar.
+
+Pero si usted tiene múltiples instancias con nombre instaladas en su máquina, para conectarse con una de ellas debemos proveer un número de puerto 
+que corresponda con el nombre apropiado de instancia. Por defecto, las instancias con nombre usan puertos dinámicos, lo que significa que cada vez 
+que el Motor de la base de Datos inicia, un nuevo número de puerto es asignado. Por eso, es difícil configurar el Cortafuegos de Windows para permitir acceso.
+
+Para resolver este probleba, existe el servicio SQL Browser, el cual provee el número de puerto TCP que corresponde a las instancias con nombre. 
+El servicio SQL Browser usa el puerto UDP 1434. Ahora que hemos cumplido con los asuntos básicos para la conexión remota, continuemos con el 
+procedimiento de configuración.
+
+Habilitando el protocolo TCP/IP
+El primer paso es habilitar el protocolo TCP/IP en el servicio de SQL Server. Abra SQL Server Configuration Manager en la carpeta Configuration Tools 
+debajo de la carpeta Microsoft SQL Server.
+
+Desde el nodo SQL Server Network Configuration, seleccione el elemento Protocols para el SQL Server apropiado. En el panel de detalles, 
+haga clic derecho en el elemento TCP/IP y seleccione la opción Enable:
+
+Después de este paso, un diálogo de Aviso se muestra, en el cual nos informan que los cambios que son hechos no tomarán efecto hasta la siguiente vez 
+que el servicio es iniciado.
+
+Para que los cambios tomen efecto, desde el panel de la consola, seleccione SQL Server Services y desde el panel de detalles, 
+haga clic derecho en la instancia del motor de la base de datos SQL Server (SQLEXPRESS) y haga clic en la opción Restart.
+
+Ahora los servicios se reiniciaron con TCP/IP habilitado, pero aún no se puede conectar remotamente hasta que configuremos el Cortafuegos de Windows.
+
+Configurando el Cortafuegos de Windows
+Desde Control Panel elija Windows Firewall y haga clic en Advanced settings o solo escriba wf.msc en Search program and files desde el menú de Inicio:
+
+Reglas de Entrada: usted puede permitir o bloquear intentos de tráfico para acceder a la computadora que coincide con cierto criterio en la regla. 
+Por defecto, el tráfico entrante está bloqueado. Para permitir que el tráfico acceda a su computadora, usted necesita crear una regla de entrada.
+Reglas de Salida: Usted puede permitir o bloquear tráfico que se origina desde una computadora específica creando reglas. Por defecto, 
+el tráfico hacia afuera está permitido, así que usted necesita crear la regla para bloquear el tráfico hacia afuera.
+En Windows Firewall with Advanced Security, haga clic en Inbound Rules desde el panel izquierdo, haga clic derecho en Inbound Rules y seleccione New Rule, 
+o desde Actions haga clic en New Rule:
+
+obre cuál hará clic es su decisión. En ambos casos, el asistente New Inbound Rule aparecerá. Bajo Rule Type seleccione Port y haga clic en el botón Next:
+
+TCP es usado para la instancia por defecto y la instancia con nombre si es la única instancia instalada en la máquina y el puerto por defecto es 1433.
+
+Todos los puertos locales: La regla se aplica a todos los puertos desde el protocolo seleccionado.
+Puertos locales específicos: En la caja de texto usted especifica un puerto o conjunto de puertos a los cuales se aplica la regla.
+Para este ejemplo, seleccione el protocolo UDP y en Specific local ports ingrese el número de puerto 1434. Para proceder con los ajustes de los
+ servicios de SQL Browser, haga clic en el botón Next:
+
+Allow the connection: Incluye todas las conexiones seguras e inseguras.
+Allow the connection if it is secure: Sólo incluye a la conexión si es hecha a través de un canal seguro.
+Block the connection: Bloquea todas las conexiones seguras e inseguras.
+En el diálogo Action, elija Allow the connection y haga clic en el botón Next:
+
+Domain: El ajuste es aplicado sólo cuando una computadora está conectada a un dominio.
+Private: El ajuste es aplicado cuando una computadora está conectada a una red que es identificada como una red privada.
+Public: El ajuste es aplicado cuando una computadora está conectada a una red pública no confiable.
+En el diálogo Profile, elija los tres perfiles y haga clic en Next:
+
+En este paso de un nombre a la regla y haga clic en Finish.
+
+Nota: Cuando demos un nombre a la regla, por favor escriba un nombre descriptivo que pueda entender después, 
+cuando necesite encontrarla o editarla en la lista Inbound Rules.
+
+hora cree una regla de permiso para el motor de base de datos de la instancia.
+
+Vaya a New Rule y desde Rule Type seleccione la regla Custom:
+
+En Program, debajo de Services, haga clic en el botón Customize:
+
+Desde Customize Service Settings, debajo de Apply to this service, seleccione el servicio de motor de base de datos de la instancia y haga clic en el botón OK:
+
+Luego, haga clic en Next hasta encontrarse con el diálogo Name, dé un nombre para la regla y haga clic en Finish:
+
+hora, cuando todas las reglas estén establecidas, usted está listo para conectarse remotamente a SQL Server.
+
+Inicie SQL Server, en la ventana de diálogo Server name, ingrese el nombre de la instancia a la que se quiere conectar. Desde el menú desplegable Authentication, 
+seleccione SQL Server Authentication, y para los campos Login y Password, ingrese sus credenciales y haga clic en el botón Connect.
+

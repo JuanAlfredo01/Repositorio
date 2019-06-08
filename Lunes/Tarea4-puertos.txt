@@ -1,0 +1,60 @@
+Puertos configurables
+Configuration Manager le permite configurar los puertos para los siguientes tipos de comunicación:
+Punto de sitios web del catálogo de aplicaciones a punto de servicio web del catálogo de aplicaciones
+Punto de proxy de inscripción a punto de inscripción
+Cliente a sistema de sitio que ejecuta IIS
+Cliente a Internet (como configuración de servidor proxy)
+Punto de actualización de software a Internet (como configuración de servidor proxy)
+Punto de actualización de software a servidor WSUS
+Servidor de sitio a servidor de base de datos del sitio
+Puntos de servicios de informes
+ Nota
+
+Los puertos que se usan para el rol de sistema de sitio de punto de servicios de informes se configuran en SQL Server Reporting Services.
+ Configuration Manager usa estos puertos durante las comunicaciones con el punto de servicios de informes. Asegúrese de revisar estos puertos que 
+definen la información de filtro IP para directivas IPsec o para configurar firewalls.
+De forma predeterminada, el puerto HTTP que se usa para la comunicación entre cliente y sistema de sitio es el puerto 80, y el puerto HTTPS predeterminado es el 443.
+ Los puertos para la comunicación entre cliente y sistema de sitio a través de HTTP o HTTPS se pueden cambiar durante la instalación o en 
+las propiedades del sitio en su sitio de Configuration Manager.
+Los puertos que se usan para el rol de sistema de sitio de punto de servicios de informes se configuran en SQL Server Reporting Services. 
+Configuration Manager usa estos puertos durante las comunicaciones con el punto de servicios de informes. Asegúrese de revisar estos puertos 
+al definir la información de filtro IP para directivas IPsec o para configurar firewalls.
+Puertos no configurables
+Configuration Manager no permite configurar puertos para los siguientes tipos de comunicación:
+Sitio a sitio
+Servidor de sitio a sistema de sitio
+Consola de Configuration Manager con el proveedor de SMS
+Consola de Configuration Manager a Internet
+Conexiones a servicios de nube, como Microsoft Intune y puntos de distribución en la nube
+Puertos usados por clientes y sistemas de sitio de Configuration Manager
+En las secciones siguientes se detallan los puertos que se usan para la comunicación en Configuration Manager. En el título de la sección, 
+
+las flechas representan la dirección de la comunicación:
+-- > indica que un equipo inicia la comunicación y el otro equipo siempre responde
+< -- > indica que cualquier equipo puede iniciar la comunicación
+
+Punto de sincronización de Asset Intelligence -- > Microsoft
+			Descripción	UDP	TCP
+				HTTPS	--	443
+
+Punto de sincronización de Asset Intelligence -- > SQL Server
+			Descripción	UDP	TCP
+		SQL a través de TCP	--	1433          Nota 2 Puerto alternativo disponible
+
+
+Punto de servicio web del catálogo de aplicaciones -- > SQL Server
+			Descripción	UDP	TCP
+
+		SQL a través de TCP	--	1433 	      Nota 2 Puerto alternativo disponible
+
+
+Punto de sitios web del catálogo de aplicaciones -- > Punto de servicio web del catálogo de aplicaciones
+			Descripción	UDP	TCP
+				HTTP	--	80            Nota 2 Puerto alternativo disponible
+
+				HTTPS	--	443           Nota 2 Puerto alternativo disponible
+
+Cliente -- > Punto de sitios web del catálogo de aplicaciones
+			Descripción	UDP	TCP
+				HTTP	--	80            Nota 2 Puerto alternativo disponible
+				HTTPS	--	443 	      Nota 2 Puerto alternativo disponible

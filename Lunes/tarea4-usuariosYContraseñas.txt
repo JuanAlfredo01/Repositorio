@@ -1,0 +1,68 @@
+Un usuario es una entidad de seguridad de la base de datos. Los inicios de sesión deben estar asignados a un usuario de base de datos para poder 
+conectarse a una base de datos. Un inicio de sesión se puede asignar a bases de datos diferentes como usuarios diferentes pero solo se puede 
+asignar como un usuario en cada base de datos. En una base de datos parcialmente independiente, puede crearse un usuario que no tenga un inicio de sesión.
+Para obtener más información sobre los usuarios de la base de datos independiente, vea CREATE USER (Transact-SQL). Si el usuario invitado de una base de
+datos está habilitado, un inicio de sesión que no esté asignado a un usuario de la base de datos puede entrar en la base de datos como el usuario invitado.
+IMPORTANTE: El usuario invitado suele estar deshabilitado. No habilite al usuario invitado a menos que sea necesario.
+Como entidad de seguridad, se pueden conceder permisos a los usuarios. El ámbito de un usuario es la base de datos. 
+Para establecer conexión con una base de datos concreta de la instancia de SQL Server, un inicio de sesión debe estar asignado a un usuario de la base de datos.
+Los permisos dentro de la base de datos se conceden y deniegan al usuario de la base de datos, no al inicio de sesión.
+Permissions
+Debe tener el permiso ALTER ANY USER para la base de datos.
+Crear un usuario con SSMS
+En el Explorador de objetos, expanda la carpeta Bases de datos .
+Expanda la base de datos en la que se va a crear el usuario de la misma.
+Haga clic con el botón derecho en la carpeta Seguridad, seleccione Nuevo y después Usuario....
+En el cuadro de diálogo Usuario de base de datos - Nuevo, en la página General, seleccione uno de los tipos de usuario siguientes de la lista Tipo de usuario:
+usuario SQL con inicio de sesión
+usuario SQL con contraseña
+Usuario SQL sin inicio de sesión
+Usuario asignado a un certificado
+Usuario asignado a una clave asimétrica
+usuario de Windows
+
+Cuando se selecciona una opción, las demás opciones del cuadro de diálogo podrían cambiar. Algunas opciones solo se aplican a tipos específicos de usuarios 
+de base de datos. Algunas opciones pueden dejarse en blanco y usarán un valor predeterminado.
+Nombre de usuario.
+
+Escriba un nombre para el nuevo usuario. Si ha elegido Usuario de Windows en la lista Tipo de usuario, también puede hacer clic en los puntos suspensivos (...) 
+para abrir el cuadro de diálogo Seleccione Usuario o Grupo.
+
+Nombre de inicio de sesión
+Especifique el inicio de sesión del usuario. Como alternativa, haga clic en los puntos suspensivos (...) para abrir el cuadro de diálogo Seleccionar inicio de sesión.
+ Si seleccionaUsuario SQL con inicio de sesión o Usuario de Windows en la lista Tipo de usuario , estará disponible Nombre de inicio de sesión .
+Contraseña y Confirmar contraseña
+Escriba una contraseña para los usuarios que se autentican en la base de datos.
+Idioma predeterminado
+Escriba el idioma predeterminado del usuario.
+Esquema predeterminado
+Escriba el esquema al que pertenecerán los objetos creados por este usuario. Como alternativa, haga clic en los puntos suspensivos 
+(...) para abrir el cuadro de diálogo Seleccionar esquema. Si seleccionaUsuario SQL con inicio de sesión , Usuario SQL sin inicio de sesión, 
+Usuario de Windowsen la lista Tipo de usuario , estará disponible Esquema predeterminado .
+Nombre de certificado
+Escriba el certificado que se usará para el usuario de base de datos. Como alternativa, haga clic en los puntos suspensivos (...) para abrir el
+ cuadro de diálogo Seleccionar certificado. Si seleccionaUsuario asignado a un certificado en la lista Tipo de usuario , estará disponible Nombre de certificado .
+Nombre de clave asimétrica
+Escriba la clave que se usará para el usuario de base de datos. Como alternativa, haga clic en los puntos suspensivos (...) para abrir el
+ cuadro de diálogo Seleccionar clave asimétrica. Si seleccionaUsuario asignado a una clave asimétrica en la lista Tipo de usuario ,
+ estará disponible Nombre de clave asimétrica .
+Haga clic en Aceptar.
+Opciones adicionales
+En el cuadro de diálogo Usuario de la base de datos - Nuevo también se proporcionan opciones en cuatro páginas adicionales: 
+Esquemas de propiedad, Pertenencia, Elementos protegibles y Propiedades extendidas.
+La página Esquemas de propiedad enumera todos los esquemas posibles que pueden ser propiedad del nuevo usuario de base de datos. 
+Para agregar o quitar esquemas en un usuario de base de datos, en Esquemas propiedad de este usuario, active o desactive las casillas situadas junto a los esquemas.
+La página Pertenencia enumera todos los roles de pertenencia de base de datos posibles que pueden ser propiedad del nuevo usuario de base de datos. 
+Para agregar o quitar roles en un usuario de base de datos, en Pertenencia al rol de la base de datos, active o desactive las casillas situadas junto a los roles.
+La página Elementos protegibles muestra todos los elementos protegibles posibles y los permisos en esos elementos protegibles que se pueden 
+conceder al inicio de sesión.
+La página Propiedades extendidas permite agregar propiedades personalizadas a los usuarios de base de datos. En esta página están disponibles las opciones siguientes.
+Base de datos
+Muestra el nombre de la base de datos seleccionada. Este campo es de solo lectura.
+Intercalación
+Muestra la intercalación utilizada para la base de datos seleccionada. Este campo es de solo lectura.
+Propiedades
+Muestra o especifica las propiedades extendidas del objeto. Cada propiedad extendida está formada por un par nombre/valor de metadatos asociados al objeto.
+Puntos suspensivos (...)
+Haga clic en los puntos suspensivos (...) situados detrás de Valor para abrir el cuadro de diálogo Valor para propiedad extendida.
+ Escriba o muestre el valor de la propiedad extendida en esta ubicación mayor.
